@@ -1,5 +1,62 @@
-GET http://localhost:3000/users?page=2&limit=3
+GET http://localhost:3000/authors
 
 ###
 
-GET http://localhost:3000/posts?page=2&limit=3
+GET http://localhost:3000/endpoint_a?page=2&limit=3
+
+
+###
+
+POST http://localhost:3000/articles HTTP/1.1
+content-type: application/json
+
+{
+    
+    "author_name": "Joao",
+    "title": "Article 5"
+}
+
+###
+POST http://localhost:3000/articles HTTP/1.1
+content-type: application/json
+
+{
+    
+    "author_name": "Joao",
+    "title": "Article 5"
+}
+
+###
+POST http://localhost:3000/update-bulk/articles HTTP/1.1
+content-type: application/json
+
+[
+    {
+    "id": 1,
+    "title": "Updated 1"
+},
+{
+    "id": 2,
+    "title": "Updated 2"
+}
+]
+
+###
+POST http://localhost:3000/delete-bulk/articles HTTP/1.1
+content-type: application/json
+
+[
+    {
+    "id": 2
+    
+},
+{
+    "id": 3
+    
+},
+{
+    "id": 7
+    
+}
+]
+
